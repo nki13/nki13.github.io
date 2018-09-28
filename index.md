@@ -9,4 +9,6 @@ I am a student studying Computer Science at Western Oregon University. This is m
 
 ## CS460 Software Engineering Homework
 
-[Homework 1](https://nki13.github.io/HW1) - Git, HTML/CSS, Bootstrap
+### Homework 1
+[Homework 1 Journal](https://nki13.github.io/HW1) - Git, HTML/CSS, Bootstrap
+[Homework 1 Demo]
