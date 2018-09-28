@@ -13,5 +13,3 @@ I am a student studying Computer Science at Western Oregon University. This is m
 [Homework 1 Demo]
 
 ### Homework 2
-
-Hw 2 links go here
