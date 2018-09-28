@@ -26,7 +26,7 @@ After getting Git setup, my next task was to figure out how I was going to write
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="styles.css"/>
         <!-- jQuery first, then Tether, then Bootstrap JS. -->
-        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
@@ -71,5 +71,37 @@ For content, my boyfriend let me use a weekly workout plan that he had come up w
 I tried to look at my HTML code setup like an essay format. I used "head" to represent an intro for each page, and I also used "body" to represent body paragraphs with each "div" seperate a different topic. I had a "div" for things such as the table of contents, links to other pages, the introduction paragraph on the index page, and each day within the week pages.
 
 ## Step 4: Wrapping it up
+
+To wrap up, I added some personalized styling to my styles.css file. Shown here:
+
+```css
+#homeheader{
+    color: white;
+    text-align: center;    
+    background-color: gray;    
+}         
+#weeks{   
+    color: white;   
+    text-align: center;    
+    background-color: gray;    
+}
+h4{   
+    color: gray;    
+}
+h2, h3{    
+        color: gray;    
+        text-align: center;   
+}
+```
+Once everything was done to my liking I did my final git add, git commit, and git push from origin to master.
+
+```bash
+git add .
+git commit -m "Final commit"
+git push origin master
+git status
+```
+
+Overall, I think my page is simple and basic. Aside from that, I actually liked how it came out. I didn't expect this to be my best work, but I thought it was a great opportunity for me to practice and try out different elements and styles. Click [here](https://nki13.github.io/CS460/HW1/Demo/) for a demo of my Homework 1 assignment, or checkout the links above for navigation.
 
 ## Step 5: GitHub Pages
