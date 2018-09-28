@@ -17,7 +17,7 @@ git config --global user.email "nki13@wou.edu"
 git remote add origin https://github.com/nki13/nki13.github.io
 git remote
 ```
-## Step 2: Setup HTML, CSS, and Bootstrap...getting ready to code
+## Step 2: Setup HTML, CSS, and Bootstrap...Getting ready to code
 
 After getting Git setup, my next task was to figure out how I was going to write these web pages. Taking a note from my porfessor, I used Visual Studio Code as my text editor. To start out, I created a index.html file and a styles.css file. The HTML below is what I added to index.html to use Bootstrap and CSS. Once I had all of that setup, I was able to finally add content to it.
 
@@ -31,3 +31,5 @@ After getting Git setup, my next task was to figure out how I was going to write
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
 ```
+
+## Step 3: Straight to the coding
