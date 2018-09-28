@@ -10,6 +10,7 @@ Once Git was downloaded from [here](https://git-scm.com/downloads), I created a 
 ```bash
 cd Desktop
 mkdir Git
+cd Git
 git init
 git config --global user.name "nki13"
 git config --global user.email "nki13@wou.edu"
