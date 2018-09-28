@@ -34,19 +34,42 @@ After getting Git setup, my next task was to figure out how I was going to write
 
 ## Step 3: Straight to the coding
 
-For content, my boyfriend let me use a weekly workout plan that he had come up with. From there, I created a new .html file for each week with 4 weeks all together. For example, Week1.html. The structure of each file looked something like this:
+For content, my boyfriend let me use a weekly workout plan that he had come up with. From there, I created a new .html file for each week with 4 weeks all together. For example, Week1.html. The structure of each file looked something like this, but here are some details that I had in my index.html file:
 
 ```HTML
 <html>
    <head>
-           <title></title>
+           <title>Power Inquires</title>
    </head> 
    <body>
-           <div>
+           <div id="table of contents">
+                   <ul>
+                           <li><a></a></li>
+                   </ul>
            </div>
-           <div>
+           <div id="intro">
+                   <h></h>
+                   <p></p>
+           </div>
+           <div id="table">
+                   <table> 
+                           <tr>
+                                   <th>Day</th>
+                                   <th>Focus</th>
+                                   <th>Explanation</th>
+                           </tr>
+                           <tr>
+                                   <td>Monday</td>
+                                   <td>Push</td>
+                                   <td>Chest,Shoulders,and Triceps</td>
+                           </tr>
+                   </table>        
            </div>
    </body>
 </html>
 ```
 I tried to look at my HTML code setup like an essay format. I used "head" to represent an intro for each page, and I also used "body" to represent body paragraphs with each "div" seperate a different topic. I had a "div" for things such as the table of contents, links to other pages, the introduction paragraph on the index page, and each day within the week pages.
+
+## Step 4: Wrapping it up
+
+## Step 5: GitHub Pages
