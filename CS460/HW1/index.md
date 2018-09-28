@@ -17,6 +17,17 @@ git config --global user.email "nki13@wou.edu"
 git remote add origin https://github.com/nki13/nki13.github.io
 git remote
 ```
-## Step 2: Setup HTML and css
+## Step 2: Setup HTML, CSS, and Bootstrap...getting ready to code
 
-Explain step 2
+After getting Git setup, my next task was to figure out how I was going to write these web pages. Taking a note from my porfessor, I used Visual Studio Code as my text editor. To start out, I created a index.html file and a styles.css file. The HTML below is what I added to index.html to use Bootstrap and CSS. Once I had all of that setup, I was able to finally add content to it.
+
+```HTML
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="styles.css"/>
+        <!-- jQuery first, then Tether, then Bootstrap JS. -->
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+```
