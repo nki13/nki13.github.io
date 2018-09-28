@@ -48,7 +48,7 @@ For content, my boyfriend let me use a weekly workout plan that he had come up w
                    </ul>
            </div>
            <div id="intro">
-                   <h></h>
+                   <h2></h2>
                    <p></p>
            </div>
            <div id="table">
