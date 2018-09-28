@@ -33,3 +33,20 @@ After getting Git setup, my next task was to figure out how I was going to write
 ```
 
 ## Step 3: Straight to the coding
+
+For content, my boyfriend let me use a weekly workout plan that he had come up with. From there, I created a new .html file for each week with 4 weeks all together. For example, Week1.html. The structure of each file looked something like this:
+
+```HTML
+<html>
+   <head>
+           <title></title>
+   </head> 
+   <body>
+           <div>
+           </div>
+           <div>
+           </div>
+   </body>
+</html>
+```
+I tried to look at my HTML code setup like an essay format. I used <head> to represent an intro for each page, and I also used <body> to represent body paragraphs with each <div> seperate a different topic. I had a <div> for things such as the table of contents, links to other pages, the introduction paragraph on the index page, and each day within the week pages.
