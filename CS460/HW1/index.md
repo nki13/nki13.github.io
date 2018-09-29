@@ -1,7 +1,15 @@
 # Homework 1
 
-Go back to [Home Page](https://nki13.github.io)
 * For this homework I had to write a multi-page, hyperlinked set of web pages using HTML, and styling them with CSS and Bootstrap. I was decently familiar with HTML, but spent alot of time googling about CSS and Boostrap. What was really unfamiliar to me was GIt. Once I could wrap my head around it, I ended up benefitting alot from what is has to offer.
+
+## Links
+
+* [Portfolio Home Page](https://nki13.github.io)
+* [Assignment Page](http://www.wou.edu/~morses/classes/cs46x/assignments/HW1.html)
+* [Code Repository](https://github.com/nki13/nki13.github.io/tree/master/CS460/HW1)
+* [Homework 1 Demo](https://nki13.github.io/CS460/HW1/Demo/)
+
+
 
 ## Step 1: Setup Git, create a GitHub account, create local and remote repositories, then synchronize them.
 
