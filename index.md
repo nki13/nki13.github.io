@@ -4,7 +4,7 @@ My name is Nikki Ki and I am a student studying Computer Science at Western Oreg
 
 ## Code Repository
 
-Here is the link to my seperate repository where everything seen here is hosted: [https://github.com/nki13/nki13.github.io/CS460](https://github.com/nki13/nki13.github.io/CS460)
+Here is the link to my seperate repository where everything seen here is hosted: [https://github.com/nki13/nki13.github.io/CS460/](https://github.com/nki13/nki13.github.io/CS460/)
 
 ## Software Engineering I (CS460): Homework
 
