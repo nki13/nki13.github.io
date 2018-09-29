@@ -1,6 +1,6 @@
 # You've made it, Welcome!
 
-I am a student studying Computer Science at Western Oregon University. This is my repository for all my work from my CS460 Software Engineering class.
+My name is Nikki Ki and I am a student studying Computer Science at Western Oregon University. This is a Portfolio for all my work from my CS460 Software Engineering I class.
 
 ## Code Repository
 
