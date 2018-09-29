@@ -76,6 +76,38 @@ For content, my boyfriend let me use a weekly workout plan that he had come up w
    </body>
 </html>
 ```
+All the week's pages looked pretty much identical, so here is the structure and some details from week 1:
+
+```HTML
+<html>
+    <head>
+        <title>Week 1 Page</title>
+    </head>
+    <body>        
+        <div id="weeks">
+            <h1>Week 1...</h1>        
+        </div>
+        <div id="links">            
+            <h4>Links:</h4>               
+            <dl>                
+            <dd><a href="/CS460/HW1/Demo">Home Page</a></dd>               
+            <dd><a href="/CS460/HW1/Demo/Week2.html">Next Week</a></dd>                
+            </dl>               
+        </div>                
+        <div id="monday">            
+                <h4>Monday:</h4>
+                <ol>
+                </ol>                
+        </div>
+        <div id="tuesday">            
+                <h4>Tuesday:</h4>
+                <ol>
+                </ol>                
+        </div>
+    </body>
+</html>
+```
+
 I tried to look at my HTML code setup like an essay format. I used "head" to represent an intro for each page, and I also used "body" to represent body paragraphs with each "div" seperate a different topic. I had a "div" for things such as the table of contents, links to other pages, the introduction paragraph on the index page, and each day within the week pages.
 
 ## Step 4: Wrapping it up
