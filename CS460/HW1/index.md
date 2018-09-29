@@ -1,6 +1,6 @@
 # Homework 1
 
-* For this homework I had to write a multi-page, hyperlinked set of web pages using HTML, and styling them with CSS and Bootstrap. I was decently familiar with HTML, but spent alot of time googling about CSS and Boostrap. What was really unfamiliar to me was GIt. Once I could wrap my head around it, I ended up benefitting alot from what is has to offer.
+For this homework I had to write a multi-page, hyperlinked set of web pages using HTML, and styling them with CSS and Bootstrap. I was decently familiar with HTML, but spent alot of time googling about CSS and Boostrap. What was really unfamiliar to me was GIt. Once I could wrap my head around it, I ended up benefitting alot from what is has to offer.
 
 ## Links
 
@@ -114,3 +114,5 @@ git status
 Above is screenshot of what my index page looks like. Overall, I think my page is simple, clean, and straight to the point. I actually liked how it came out. I didn't expect the final result to be extravagant work, but I thought it was a great opportunity for me to practice and try out different elements and styles. Click [here](https://nki13.github.io/CS460/HW1/Demo/) for a demo of my Homework 1 assignment, or checkout the links above for navigation.
 
 ## Step 5: GitHub Pages
+
+The last part of this homework was to create a portfolio using GitHub Pages. With help from Google and my classmates, I was able to create one! I named my repository nki13.github.io. In this new repository I made an index.md file to make changes in github.com to the portfolio. If you choose to use markdown in github.com, then DON'T FORGET that changes made in github have to be "pulled" from your local repository first before making changes to stay up to date.
