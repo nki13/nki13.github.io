@@ -1,5 +1,4 @@
-# Homework 1
-### Journal
+# Journal - Homework 1
 
 For this homework I had to write a multi-page, hyperlinked set of web pages using HTML, and styling them with CSS and Bootstrap. I was decently familiar with HTML, but spent alot of time googling about CSS and Boostrap. What was really unfamiliar to me was GIt. Once I could wrap my head around it, I ended up benefitting alot from what is has to offer.
 
