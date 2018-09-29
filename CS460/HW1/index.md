@@ -115,4 +115,4 @@ Above is screenshot of what my index page looks like. Overall, I think my page i
 
 ## Step 5: GitHub Pages
 
-The last part of this homework was to create a portfolio using GitHub Pages. With help from Google and my classmates, I was able to create one! I named my repository nki13.github.io. In this new repository I made an index.md file to make changes in github.com to the portfolio. If you choose to use markdown in github.com, then DON'T FORGET that changes made in github have to be "pulled" from your local repository first before making changes to stay up to date.
+The last part of this homework was to create a portfolio using GitHub Pages. With help from Google and my classmates, I was able to create one! I named my repository nki13.github.io. In this new repository I made an index.md file to make changes in github.com to the portfolio. If you choose to use markdown in github.com, then DON'T FORGET that changes made in github have to be "pulled" from your local repository first before making changes to stay up to date. While creating and setting up this Portfolio, I did move around files within my repositories for better organization all together.
