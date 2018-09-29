@@ -4,14 +4,12 @@ I am a student studying Computer Science at Western Oregon University. This is m
 
 ## Code Repository
 
-[Here](https://github.com/nki13/CS4602018) is the link to my repository where everything seen here is hosted.
+Here is the link to my seperate repository where everything seen here is hosted: [https://github.com/nki13/CS4602018]
 
-## CS460 Software Engineering Homework
+## Software Engineering I (CS460): Homework
 
 ### Homework 1 - Git, HTML/CSS, Bootstrap
 * [Homework 1 Journal](https://nki13.github.io/CS460/HW1)
 * [Homework 1 Demo](https://nki13.github.io/CS460/HW1/Demo)
 
 ### Homework 2
-
-hw2 stuff goes here
