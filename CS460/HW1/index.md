@@ -103,6 +103,6 @@ git status
 ```
 
 ![Index Picture](Power.PNG)
-Above is what my index page looks like and overall, I think my page is simple and basic. Aside from that, I actually liked how it came out. I didn't expect this to be my best work, but I thought it was a great opportunity for me to practice and try out different elements and styles. Click [here](https://nki13.github.io/CS460/HW1/Demo/) for a demo of my Homework 1 assignment, or checkout the links above for navigation.
+Above is screenshot of what my index page looks like. Overall, I think my page is simple, clean, and straight to the point. I actually liked how it came out. I didn't expect the final result to be extravagant work, but I thought it was a great opportunity for me to practice and try out different elements and styles. Click [here](https://nki13.github.io/CS460/HW1/Demo/) for a demo of my Homework 1 assignment, or checkout the links above for navigation.
 
 ## Step 5: GitHub Pages
