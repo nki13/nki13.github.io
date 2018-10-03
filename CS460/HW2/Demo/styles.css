@@ -1,0 +1,32 @@
+#pageheader {
+	text-align: center;
+	font-family: "Courier", monospace;
+}
+
+h1 {
+	color: tan;
+}
+
+#formstuff {
+	text-align: center;
+	font-family: "Courer", monospace;
+	background-color: tan;
+}
+
+#answer {
+	text-align: center;
+	font-family: "Courer", monospace;
+	background-color: tan;
+}
+
+#table1 {
+	font-family: "Courer", monospace;
+}
+
+#table2 {
+	font-family: "Courer", monospace;
+}
+
+h3 {
+	color: tan;
+}

@@ -156,6 +156,53 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!--JQuery stuff-->
+    <script>
+            $(document).ready(function(){
+                $("#input1").hide();
+                $("#input2").hide();
+                $("#button1").hide();
+                $("#button2").hide();
+                $("#answer").hide();
+                $("#table1").hide();
+                $("#table2").hide();
+            });
+    </script>
+                
+    <!--What to do on clicks-->
+    <script>
+        $(document).ready(function(){
+            $("#kg").click(function(){
+                $("#input2").hide();
+                $("#button2").hide();
+                $("#table1").hide();
+                $("#answerbox").empty();
+                $("#input1").show();
+                $("#button1").show();
+            });
+            $("#lbs").click(function(){
+                $("#input1").hide();
+                $("#button1").hide();
+                $("#table2").hide();
+                $("#answerbox").empty();
+                $("#input2").show();
+                $("#button2").show();
+            });
+            $("#button1").click(function(){
+                $("#table1").hide();
+                $("#table2").show();
+                $("#answer").show();
+                $("#answerbox").empty();
+                $("#answerbox").append($("#input01").val() * 0.45359237 + " kg. <br>");
+            });
+            $("#button2").click(function(){
+                $("#table2").hide();
+                $("#table1").show();
+                $("#answer").show();
+                $("#answerbox").empty();
+                $("#answerbox").append($("#input02").val() / 0.45359237 + " lbs. <br>");
+            });
+        });
+    </script>
     </div>
 </body>
 </html>
