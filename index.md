@@ -13,3 +13,5 @@ Here is the link to my seperate repository where everything seen here is hosted:
 * [Homework 1 Demo](https://nki13.github.io/CS460/HW1/Demo)
 
 ### Homework 2 - HTML, Javascript, jQuery
+* [Homework 2 Journal](https://nki13.github.io/CS460/HW2)
+* [Homework 2 Demo](https://nki13.github.io/CS460/HW2/Demo)
