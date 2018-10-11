@@ -1,14 +1,16 @@
 ﻿using System;
+using System.Text;
+using System.Collections.Generic;
 
 namespace BinaryPrinter
 {
 
-    class Node
+    class Node<T>
     {
-        public object data;
-        public Node next;
+        public T data;
+        public Node<T> next;
 
-        public Node(object data, Node next)
+        public Node(T data, Node<T> next)
         {
             this.data = data;
             this.next = next;
@@ -19,7 +21,7 @@ namespace BinaryPrinter
     {
         T push(T element);
 
-        object pop();
+        T pop();
 
         bool isEmpty();
 
@@ -33,10 +35,10 @@ namespace BinaryPrinter
         public QueueUnderflowException(string message) : base(message) { }
     }
 
-    class LinkedList<T> : IQueue<T>
+    class LinkedQueue<T> : IQueue<T>
     {
-        private Node front;
-        private Node rear;
+        private Node<T> front;
+        private Node<T> rear;
 
         public T push(T element)
         {
@@ -47,20 +49,20 @@ namespace BinaryPrinter
             
             if ( isEmpty() )
             {
-                Node tmp = new Node(element, null);
+                Node<T> tmp = new Node<T>(element, null);
             }
             else
             {
-                Node tmp = new Node(element, null);
+                Node<T> tmp = new Node<T>(element, null);
                 rear.next = tmp;
                 rear = tmp;
             }
             return element;
         }
 
-        public object pop()
+        public T pop()
         {
-            object tmp;
+            T tmp;
             if ( isEmpty() )
             {
                 throw new QueueUnderflowException("The queue was empty when pop was invoked");
@@ -92,12 +94,68 @@ namespace BinaryPrinter
         }
     }
 
-
-
     class Program
     {
+        static LinkedList<String> generateBinaryRepresentationList(int n)
+        {
+            LinkedQueue<StringBuilder> q = new LinkedQueue<StringBuilder>();
+
+            LinkedList<String> output = new LinkedList<String>();
+
+            if (n < 1)
+            {
+                return output;
+            }
+
+            q.push(new StringBuilder("i"));
+
+            while(n-- > 0)
+            {
+                StringBuilder sb = q.pop();
+                output.AddLast(sb.ToString());
+
+                StringBuilder sbc = new StringBuilder(sb.ToString());
+
+                //Left child
+                sb.Append("0");
+                q.push(sb);
+                //Right child
+                sbc.Append("1");
+                q.push(sbc);
+            }
+            return output;
+        }
+
         static void Main(string[] args)
         {
+            int n = 10;
+            if(args.Length < 1)
+            {
+                Console.WriteLine("Please invoke with the max value to print binary up to, like this:");
+                Console.WriteLine("NEED TO PUT SOMETHING HERE");
+                return;
+            }
+            try
+            {
+                n = int.Parse(args[0]);
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("I'm sorry, I can't understand the number: " + args[0]);
+                return;
+            }
+            LinkedList<String> output = generateBinaryRepresentationList(n);
+
+            int maxLength = output.Last.Value.Length;
+
+            foreach (String s in output)
+            {
+                for (int i = 0;i < maxLength - s.Length; i++)
+                {
+                    Console.WriteLine(" ");
+                }
+                Console.WriteLine(s);
+            }
         }
     }
 }
