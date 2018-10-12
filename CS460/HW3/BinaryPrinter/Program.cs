@@ -28,7 +28,7 @@ namespace BinaryPrinter
 
     }
 
-    class QueueUnderflowException : System.Exception
+    class QueueUnderflowException : Exception
     {
         public QueueUnderflowException() : base() { }
 
@@ -102,25 +102,27 @@ namespace BinaryPrinter
 
             LinkedList<String> output = new LinkedList<String>();
 
-            if (n < 1)
+            if (n <= 1)
             {
+                output.AddFirst(n.ToString());
                 return output;
             }
 
-            q.push(new StringBuilder("i"));
+            q.push(new StringBuilder("1"));
 
             while(n-- > 0)
             {
+
                 StringBuilder sb = q.pop();
                 output.AddLast(sb.ToString());
 
                 StringBuilder sbc = new StringBuilder(sb.ToString());
 
                 //Left child
-                sb.Append("0");
+                sb.Append('0');
                 q.push(sb);
                 //Right child
-                sbc.Append("1");
+                sbc.Append('1');
                 q.push(sbc);
             }
             return output;
@@ -132,7 +134,7 @@ namespace BinaryPrinter
             if(args.Length < 1)
             {
                 Console.WriteLine("Please invoke with the max value to print binary up to, like this:");
-                Console.WriteLine("NEED TO PUT SOMETHING HERE");
+                Console.WriteLine("\t Program 12");
                 return;
             }
             try
