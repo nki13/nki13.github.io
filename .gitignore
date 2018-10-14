@@ -1,0 +1,9 @@
+# Don't track content of these folder
+CS460/HW3/BinaryPrinter/.vs/
+CS460/HW3/BinaryPrinter/bin/
+CS460/HW3/BinaryPrinter/obj/
+
+# Compiled source #
+###################
+
+*.exe
