@@ -235,8 +235,9 @@ CS460/HW3/BinaryPrinter/obj/
 
 Overall, this homework was straight forward and simple to follow. I, of course, ran into some complications but they were mostly self inflicted. Like missing a '/' or forgetting to assign something back to another something in an if statement. Using the Visual Studio IDE helped alot as well. I compiled and ran my Program and here is what I got!
 
-Here is a side-by-side comparison of outputs with the Java program and outputs with my C# console application:
-![Comparison Picture](Comparison.PNG)
+Here is a comparison of outputs with the Java program and outputs with my C# console application. The Java application is the top picture and the C# is the picture right below it.
+![Java Compare](java.PNG)
+![C Compare](C.PNG)
 
 Here is the application throwing an error if you put in a char:
 ![Error Picture](StringError.PNG)
