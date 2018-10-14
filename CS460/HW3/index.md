@@ -247,7 +247,8 @@ Here is the application running with random numbers:
 This picture shows how what is printed is being right justified:
 ![Align Picture](Align.PNG)
 
-The last thing for me to do was to merge my hw3 branch back to master. And I did it the same way as I did in Homework 2. I checkedout and advanced master by making a change to the index.md file, then I merged hw3 back to it by doing:
+The last thing for me to do before turning in was to merge my hw3 branch back to master. And I did it the same way as I did in Homework 2. I checkedout and advanced master by making a change to the index.md file, then I merged hw3 back to it by doing:
 ```bash
 git merge hw3 master
+git push origin master
 ```
