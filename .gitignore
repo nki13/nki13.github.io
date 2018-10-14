@@ -1,5 +1,6 @@
-# Don't track content of these folder
+# Don't track content of these folders
 CS460/HW3/.vs/
+CS460/HW3/BinaryPrinter/.vs/
 CS460/HW3/BinaryPrinter/bin/
 CS460/HW3/BinaryPrinter/obj/
 
