@@ -19,11 +19,11 @@ namespace BinaryPrinter
 
     interface IQueue<T>
     {
-        T push(T element);
+        T Push(T element);
 
-        T pop();
+        T Pop();
 
-        bool isEmpty();
+        bool IsEmpty();
 
 
     }
@@ -40,16 +40,23 @@ namespace BinaryPrinter
         private Node<T> front;
         private Node<T> rear;
 
-        public T push(T element)
+        public LinkedQueue()
+        {
+            front = null;
+            rear = null;
+        }
+
+        public T Push(T element)
         {
             if (element == null )
             {
                 throw new NullReferenceException();
             }
-            
-            if ( isEmpty() )
+
+            if ( IsEmpty() )
             {
                 Node<T> tmp = new Node<T>(element, null);
+                rear = front = tmp;
             }
             else
             {
@@ -60,28 +67,30 @@ namespace BinaryPrinter
             return element;
         }
 
-        public T pop()
+        public T Pop()
         {
             T tmp;
-            if ( isEmpty() )
+            if ( IsEmpty() )
             {
                 throw new QueueUnderflowException("The queue was empty when pop was invoked");
             }
             else if ( front == rear)
             {
+                // one item in queue
                 tmp = front.data;
                 front = null;
                 rear = null;
             }
             else
             {
+                // General case
                 tmp = front.data;
                 front = front.next;
             }
             return tmp;
         }
 
-        public bool isEmpty()
+        public bool IsEmpty()
         {
             if (front == null && rear == null )
             {
@@ -108,22 +117,25 @@ namespace BinaryPrinter
                 return output;
             }
 
-            q.push(new StringBuilder("1"));
+            q.Push(new StringBuilder("1"));
 
+            // BFS
             while(n-- > 0)
             {
-
-                StringBuilder sb = q.pop();
+                // print the front of queue
+                StringBuilder sb = q.Pop();
                 output.AddLast(sb.ToString());
 
+                //Make a copy
                 StringBuilder sbc = new StringBuilder(sb.ToString());
 
                 //Left child
                 sb.Append('0');
-                q.push(sb);
+                q.Push(sb);
+
                 //Right child
                 sbc.Append('1');
-                q.push(sbc);
+                q.Push(sbc);
             }
             return output;
         }
@@ -146,7 +158,21 @@ namespace BinaryPrinter
                 Console.WriteLine("I'm sorry, I can't understand the number: " + args[0]);
                 return;
             }
-            LinkedList<String> output = generateBinaryRepresentationList(n);
+            LinkedList<string> output = new LinkedList<string>();
+            try
+            {
+                 output = generateBinaryRepresentationList(n);
+            }
+            catch (QueueUnderflowException e)
+            {
+                Console.WriteLine(e.GetBaseException().Message);
+                return;
+            }
+            catch (NullReferenceException e)
+            {
+                Console.WriteLine(e);
+                return;
+            }
 
             int maxLength = output.Last.Value.Length;
 
@@ -154,7 +180,7 @@ namespace BinaryPrinter
             {
                 for (int i = 0;i < maxLength - s.Length; i++)
                 {
-                    Console.WriteLine(" ");
+                    Console.Write(" ");
                 }
                 Console.WriteLine(s);
             }
