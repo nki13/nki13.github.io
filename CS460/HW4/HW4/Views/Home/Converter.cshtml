@@ -6,37 +6,36 @@
 <h2>Convert Miles to Metric</h2>
 
 <div class="row">
-    <div class="col-md-6">
-        <label for="input">Miles</label>
-        <form action="/action_page.php">
-            <input name="input" type="text">
-        </form>
-    </div>
-    <div class="col-md-6">
-        <h3>Select a unit</h3>
-        <input type="radio" id="millimeters" checked />
-        <label for="millimeters">millimeters</label>
-        <br />
+    <form>
+        <div class="col-md-6">       
+            <label for="input">Miles</label>
+            <input name="input" type="number" step="0.01" required />
+        </div>
+        <div class="col-md-6">
+            <h3>Select a unit</h3>
+            <input type="radio" name="unit" value="millimeters" checked />
+            <label for="millimeters">millimeters</label>
+            <br />
 
-        <input type="radio" id="centimeters" />
-        <label for="millimeters">centimeters</label>
-        <br />
+            <input type="radio" name="unit" value="centimeters" />
+            <label for="millimeters">centimeters</label>
+            <br />
 
+            <input type="radio" name="unit" value="meters" />
+            <label for="millimeters">meters</label>
+            <br />
 
-        <input type="radio" id="meters" />
-        <label for="millimeters">meters</label>
-        <br />
-
-        <input type="radio" id="kilometers" />
-        <label for="millimeters">kilometers</label>
-    </div>
+            <input type="radio" name="unit" value="kilometers" />
+            <label for="millimeters">kilometers</label>
+            <center><p><button type="submit" class="btn btn-primary btn-lg">Convert</button></p></center>
+        </div>
+    </form>
 </div>
 <br />
 <br />
-<div class="row">
-    <center><p><button class="btn btn-primary btn-lg">Convert</button></p></center>
-</div>
-<div class="row">
-    <output name="out"></output>
-</div>
+
+@if (@ViewBag.Result)
+{
+    <h2>@ViewBag.Message</h2>
+}
 
