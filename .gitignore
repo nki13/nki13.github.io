@@ -5,10 +5,10 @@ CS460/HW3/BinaryPrinter/bin/
 CS460/HW3/BinaryPrinter/obj/
 
 # HW4
-CS460/HW4/hw4/hw4/App_Data/
-CS460/HW4/hw4/hw4/bin/
-CS460/HW4/hw4/hw4/Models/
-CS460/HW4/hw4/hw4/obj/
+CS460/HW4/HW4/bin/
+CS460/HW4/HW4/obj/
+CS460/HW4/packages/
+CS460/HW4/.vs/
 
 # Compiled Source #
 ###################
