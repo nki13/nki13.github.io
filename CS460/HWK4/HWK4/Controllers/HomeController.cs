@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Diagnostics;
+
 
 namespace HWK4.Controllers
 {
@@ -13,16 +15,41 @@ namespace HWK4.Controllers
             return View();
         }
 
-        public ActionResult About()
+        [HttpGet]
+        public ActionResult Converter()
         {
-            ViewBag.Message = "Your application description page.";
+            double input = Convert.ToDouble(Request.QueryString["input"]);
+            string unit = Request.QueryString["unit"];
+            // I want the Query String values
+            Debug.WriteLine(input);
+            Debug.WriteLine(unit);
 
-            return View();
-        }
+            double output = 0;
+            ViewBag.result = false;
+            if (unit == "millimeters")
+            {
+                output = input * 1609344;
+                ViewBag.result = true;
+            }
+            else if (unit == "centimeters")
+            {
+                output = input * 160934.4;
+                ViewBag.result = true;
+            }
+            else if (unit == "meters")
+            {
+                output = input * 1609.344;
+                ViewBag.result = true;
+            }
+            else if (unit == "kilometers")
+            {
+                output = input * 1.609344;
+                ViewBag.result = true;
+            }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+            string message = "The conversion is: " + Convert.ToString(output) + " " + unit;
+
+            ViewBag.Message = message;
 
             return View();
         }
