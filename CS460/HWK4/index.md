@@ -11,7 +11,10 @@ I was unfamiliar with MVC projects and Razor code. Thankfully, in class, we did 
 
 ## Step 1: Setting up
 
+Getting set up for this fairly simple thanks to Visual Studio. I created my ASP.NET MVC 5 Project with no problems and felt like I was off to a good start. Before committing my setup project to master, I added to my .gitignore file to include the ignored files for this homework. Then I decided to create one of my branches for this homework from here. I decided to name this branch 4converter.
+
 ## Step 2: Tackling the Index.cshtml page
+
 
 ## Step 3: Mile to Metric Converter
 
