@@ -74,10 +74,12 @@ namespace HW4.Controllers
             // Translation back to hex from Color type for showing results
             string result = ColorTranslator.ToHtml(Color.FromArgb(alpha, red, green, blue));
 
-            //Results
-            string message = "Your mixed color is: " + result;
+            // Making Results show as boxes with each color in it, 3 boxes all together
+            ViewBag.Show = true;
+            ViewBag.firstColor = "width:80px; height:80px; background: " + c1 + "; ";
+            ViewBag.secondColor = "width:80px; height:80px; background: " + c2 + "; ";
+            ViewBag.mixedColor = "width:80px; height:80px; background: " + result + "; ";
 
-            ViewBag.Message = message;
             return View();
         }
     }

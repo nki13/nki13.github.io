@@ -21,5 +21,15 @@
     <p><button type="submit" class="btn btn-primary btn-lg">Mix Colors</button></p>
 }
 
-
-<h2>@ViewBag.Message</h2>
+@if (@ViewBag.Show)
+{
+    <div class="row">
+        <br />
+        <br />
+        <div class="col-sm-3" style="@ViewBag.firstColor"></div>
+        <div class="col-sm-1" style="width:55px"><h1>+</h1></div>
+        <div class="col-sm-3" style="@ViewBag.secondColor"></div>
+        <div class="col-sm-1" style="width:55px"><h1>=</h1></div>
+        <div class="col-sm-3" style="@ViewBag.mixedColor"></div>
+    </div>
+}
