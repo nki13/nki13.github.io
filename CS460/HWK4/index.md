@@ -1,4 +1,4 @@
-# Journal - Homework 4 New
+# Journal - Homework 4
 
 For this homework, I created my first ASP.NET MVC 5 Web application that does not use a database. This web application has two features, which include a mile to metric converter and a color mixer. Through this homework, I learn how to send data from the browser to the server and vice versa. Also, I was required to use two git branches for this homework for each feature, to get familiar with merging conflicts.
 I was unfamiliar with MVC projects and Razor code. Thankfully, in class, we did some examples and were able to get a gist of where in the MVC project we would be making changes to, or adding to. With that, I decided to dive in.
