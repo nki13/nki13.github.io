@@ -15,8 +15,50 @@ Getting set up for this fairly simple thanks to Visual Studio. I created my ASP.
 
 ## Step 2: Tackling the Index.cshtml page
 
+When running the web application I could see what the code given to me with the MVC 5 app results to. From there I looked at the code and saw how I could make changes for this homework. Starting with the index page, I noticed that it was pretty straight forward.
+One thing to note is that I left the default ASP.NET link for the buttons while I was in the early stages of creating this project, knowing that later I would implement the routes given from this homework's requirements. 
 
 ## Step 3: Mile to Metric Converter
+
+To implement the Mile to Metric Converter, I first started with adding an Action Method to my HomeController.cs file called Converter like so:
+```cs
+[HttpGet]
+        public ActionResult Converter()
+        {
+            return View();
+        }
+```
+After this I created a view for this Action Method by simply right clicking the method and clicking add view. This automatically made a Converter.cshtml file for me in /Views/Home/. This was a good start, but it didnt have anything on the page, or do anything.
+Next, I added HTML form elements to match what Dr. Morse has provided as an example to follow. This included an input element, radio buttons, and submit button. It was fairly easy but even though my page looked nice, it didnt actually 'do' anything.
+So I moved on to build the Converter() method in the HomeController.cs file. Here what I aded to implement the calculation and use ViewBag to give back the results:
+```cs
+double input = Convert.ToDouble(Request.QueryString["input"]);
+string unit = Request.QueryString["unit"];
+double output = 0;
+ViewBag.result = false;
+if (unit == "millimeters")
+{
+    output = input * 1609344;
+    ViewBag.result = true;
+}
+else if (unit == "centimeters")
+{
+    output = input * 160934.4;
+    ViewBag.result = true;
+}
+else if (unit == "meters")
+{
+    output = input * 1609.344;
+    ViewBag.result = true;
+}
+else if (unit == "kilometers")
+{
+    output = input * 1.609344;
+    ViewBag.result = true;
+}
+string message = "The conversion is: " + Convert.ToString(output) + " " + unit;
+ViewBag.Message = message;
+```
 
 ## Step 4: Color Mixer
 
