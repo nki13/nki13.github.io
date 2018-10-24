@@ -213,6 +213,9 @@ Here is one example of an input and the results for that mix of colors:
 ![color2](color2.PNG)
 ![color2r](color2result.PNG)
 
+If you leave the inputs empty then this error will show up, requiring the user to input a valid value before an calculation happens:
+![error](error.PNG)
+
 Overall, this homework was challenging for me but very empowering when I was finished. I learned from this homework how valuable and helpful your classmates can be. Im happy with the way that my web app came out, and am excited to make more ASP.NET MVC 5 web applications. I feel like thus far in this class we have just scratched the surface of possibilites, and I am really interested in what else it has to offer!
 
 
