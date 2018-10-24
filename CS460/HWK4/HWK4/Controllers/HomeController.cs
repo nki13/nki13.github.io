@@ -25,31 +25,31 @@ namespace HWK4.Controllers
             Debug.WriteLine(unit);
 
             double output = 0;
-            ViewBag.result = false;
+            ViewBag.Result = false;
             if (unit == "millimeters")
             {
                 output = input * 1609344;
-                ViewBag.result = true;
+                ViewBag.Result = true;
             }
             else if (unit == "centimeters")
             {
                 output = input * 160934.4;
-                ViewBag.result = true;
+                ViewBag.Result = true;
             }
             else if (unit == "meters")
             {
                 output = input * 1609.344;
-                ViewBag.result = true;
+                ViewBag.Result = true;
             }
             else if (unit == "kilometers")
             {
                 output = input * 1.609344;
-                ViewBag.result = true;
+                ViewBag.Result = true;
             }
 
-            string message = "The conversion is: " + Convert.ToString(output) + " " + unit;
+            string result = "The conversion is: " + Convert.ToString(output) + " " + unit;
 
-            ViewBag.Message = message;
+            ViewBag.Message = result;
 
             return View();
         }

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Diagnostics;
 using System.Drawing;
 
-namespace HW4.Controllers
+namespace HWK4.Controllers
 {
     public class ColorController : Controller
     {
@@ -27,51 +27,51 @@ namespace HW4.Controllers
             Debug.WriteLine(c1);
             Debug.WriteLine(c2);
 
-            // Translation from hex to Color type using System.Drawing
+            // Translation from hex to Color structure using System.Drawing
             Color color1 = ColorTranslator.FromHtml(c1);
             Color color2 = ColorTranslator.FromHtml(c2);
 
-            // Actual mixing of colors to placeholders for results
+            // placeholders for results
             int alpha = 0;
             int red = 0;
             int green = 0;
             int blue = 0;
 
             // Added checking to make sure values of alpha, red, green, and blue are valid
-            if (color1.A + color2.A >= 255)
-            {
-                alpha = 255;
-            }
-            else
+            if (color1.A + color2.A <= 255)
             {
                 alpha = color1.A + color2.A;
             }
-            if (color1.R + color2.R >= 255)
-            {
-                red = 255;
-            }
             else
+            {
+                alpha = 255;
+            }
+            if (color1.R + color2.R <= 255)
             {
                 red = color1.R + color2.R;
             }
-            if (color1.G + color2.G >= 255)
-            {
-                green = 255;
-            }
             else
+            {
+                red = 255;
+            }
+            if (color1.G + color2.G <= 255)
             {
                 green = color1.G + color2.G;
             }
-            if (color1.B + color2.B >= 255)
-            {
-                blue = 255;
-            }
             else
+            {
+                green = 255;
+            }
+            if (color1.B + color2.B <= 255)
             {
                 blue = color1.B + color2.B;
             }
+            else
+            {
+                blue = 255;
+            }
 
-            // Translation back to hex from Color type for showing results
+            // Translation back to hex from Color structure for showing results
             string result = ColorTranslator.ToHtml(Color.FromArgb(alpha, red, green, blue));
 
             // Making Results show as boxes with each color in it, 3 boxes all together
