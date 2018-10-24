@@ -190,3 +190,30 @@ Just like the last homework, we had to comment our code in XML. Although because
 
 ## Results: Working!
 
+Aha! It's working! Here are sceenshots of my web application looks like running...Below is a screenshot of my /Home/Index page. You can navigate this web application by clicking on either the buttons under the mile converter and color mixer, or you can use the navigation bar at the top of the page. 'Homework 4' in the nav bar will take you to the /Home/Index page. 'Converter' will take you to the /Home/Converter page. And 'Color Mixer' will take you to the /Color/Create page:
+![Index Pic](Index.PNG)
+
+Below is a screenshot of what my Mile to Metric Converter page looks like:
+![Convert Page](convert1.PNG)
+
+Here is the results for millimeters when the miles input is 32:
+![mm convert](mmconvert.PNG)
+
+Here is the results for meters when the miles input is 32 as well:
+![m convert](mconvert.PNG)
+
+Below is a screenshot of what my Color Mixer page looks like:
+![create](create.PNG)
+
+Here is one example of an input and the results for that mix of colors:
+![color1](color1.PNG)
+![color1r](color1result.PNG)
+
+Here is one example of an input and the results for that mix of colors:
+![color2](color2.PNG)
+![color2r](color2result.PNG)
+
+Overall, this homework was challenging for me but very empowering when I was finished. I learned from this homework how valuable and helpful your classmates can be. Im happy with the way that my web app came out, and am excited to make more ASP.NET MVC 5 web applications. I feel like thus far in this class we have just scratched the surface of possibilites, and I am really interested in what else it has to offer!
+
+
+
