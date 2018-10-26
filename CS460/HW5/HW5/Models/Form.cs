@@ -28,5 +28,10 @@ namespace HW5.Models
 
         [Required, Display(Name = "Unit Number")]
         public int UnitNumber { get; set; }
+
+        [Required]
+        public string Explanation { get; set; }
+
+        public bool Permission { get; set; }
     }
 }

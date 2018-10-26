@@ -1,3 +1,2 @@
-﻿--Take down Forms Table
-
-DROP TABLE [dbo].[Forms]
+﻿-- Drop Forms
+DROP TABLE dbo.Forms
