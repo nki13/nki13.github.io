@@ -217,4 +217,6 @@ Next, I knew I would have to make substantial edits to the Create.cshtml file. I
     @Html.ActionLink("Go Back To See All Requests", "Index")
 </div>
 ```
+Lastly, I made some edits to the Index.cshtml for the Forms Controller deleting the things I no longer needed like the edit, details, and delete. These were very minor changes compared to the Create file.
+
 ## Results: Running!
