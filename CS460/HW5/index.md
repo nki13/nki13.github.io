@@ -106,10 +106,115 @@ Now that I have both a database and model created, I needed to connect the two. 
   </connectionStrings>
 ```
 
-## Step 5: Scaffolding a Controller & Views
+## Step 5: Scaffolding a Controller & Views, Making them my own
 
+Just for this homework and learning purposes, I scaffolded a FormsController.cs class and Views for that Controller based off of what I had just created. As Dr. Morse had said in class, this isnt the best way to do this because we want to be able to go beyond what scaffolding does, but just for this homework we could test it out and see what it would give us.
+Going through what scaffolding created, it definetely needed some re-arranging and editing in some areas. I started off with looking through all the Http GET and POST methods that it had created in the FormsController. I deleted some that I didn't need, and kept the ones I did. The ones that I absolutely needed for this homework were GET Index(), GET Create(), and POST Create(). Here is what my FormsController.cs file looks like after scaffolding and editing what was given:
+```cs
+namespace HW5.Controllers
+{
+    public class FormsController : Controller
+    {
+        private FormsContext db = new FormsContext();
 
+        // GET: Forms
+        public ActionResult Index()
+        {
+            return View(db.Forms.ToList());
+        }
 
-## Step 6: Editing and making it my own
+        // GET: Forms/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
 
+        // POST: Forms/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "ID,FirstName,LastName,Phone,ApartmentName,UnitNumber,Explanation,Permission")] Form form)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Forms.Add(form);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(form);
+        }
+    }
+}
+```
+Next, I knew I would have to make substantial edits to the Create.cshtml file. I looked at what the auto generated page looked like then altered it to look how I wanted it to. I mostly did some moving around here and there, creating new divs for columns and rows. One thing that I did make the most changes to was the textarea for the details of the request form. Here is what my Creat.cshtml file looks like:
+```html
+<center>
+    <h1>Campus Apartments</h1>
+    <h4>Tennant Request Form</h4>
+</center>
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="row">
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.ApartmentName, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.ApartmentName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ApartmentName, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.UnitNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.UnitNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UnitNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>    
+        <center>
+        <div class="row">
+            @* @Html.EditorFor(model => model.Explanation, new { htmlAttributes = new { @class = "form-control", @rows = 15, @cols=50} }) *@
+            @*@Html.ValidationMessageFor(model => model.Explanation, "", new { @class = "text-danger" }) *@
+            @* @Html.TextArea("details", "Explanation of request, maintenance required or complaint. Please be specific.", 15, 30, new { @class = "form-control", style = " rows=20, columns=100" }) *@
+            @Html.TextAreaFor(model => model.Explanation, new { rows = 10, columns = 20 })
+            @Html.ValidationMessageFor(model => model.Explanation, "", new { @class = "text-danger"})
+        </div>
+        </center>
+        <div class="col-md-4">
+            @*@Html.LabelFor(model => model.Permission, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="checkbox">
+                @Html.EditorFor(model => model.Permission)
+                @Html.ValidationMessageFor(model => model.Permission, "", new { @class = "text-danger" })
+                <p>Select here to give permission for the landlord or representative to enter your unit to perform the requested maintenance. We will call first.</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit Request" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+<div class="row">
+    @Html.ActionLink("Go Back To See All Requests", "Index")
+</div>
+```
 ## Results: Running!

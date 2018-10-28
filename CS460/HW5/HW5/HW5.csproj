@@ -164,9 +164,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Forms\Create.cshtml" />
-    <Content Include="Views\Forms\Delete.cshtml" />
-    <Content Include="Views\Forms\Details.cshtml" />
-    <Content Include="Views\Forms\Edit.cshtml" />
     <Content Include="Views\Forms\Index.cshtml" />
     <Resource Include="App_Data\Forms.mdf" />
     <Content Include="App_Data\Forms_log.ldf">
