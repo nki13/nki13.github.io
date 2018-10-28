@@ -21,3 +21,6 @@ Here is the link to my seperate repository where everything seen here is hosted:
 
 ### Homework 4 - MVC Application 1, no database
 * [Homework 4 Journal](https://nki13.github.io/CS460/HWK4)
+
+### Homework 5 - MVC Application 2, simple database
+* [Homework 5 Journal](https://nki13.github.io/CS460/HW5)
