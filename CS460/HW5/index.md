@@ -236,7 +236,7 @@ Here is an example of valid input for a request form:
 ![Create Input](createinput.PNG)
 
 After clicking the Submit Request button it takes you back to the see all requests page, and from there you can see that your request was successful added and saved to the database. This is my best effort at circling the request we added:
-![Create Results](createresult.JPG)
+![Create Results](createresult.PNG)
 
 As always, if the input boxes are empty it will give the user this error:
 ![Error](error.PNG)
