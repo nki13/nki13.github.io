@@ -29,7 +29,7 @@ namespace HW5.Models
         [Required, Display(Name = "Unit Number")]
         public int UnitNumber { get; set; }
 
-        [Required]
+        [Required, Display(Name = "Explanation of Request, maintenance required or complaint. Please be specific")]
         public string Explanation { get; set; }
 
         public bool Permission { get; set; }

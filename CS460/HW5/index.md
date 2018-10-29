@@ -220,3 +220,24 @@ Next, I knew I would have to make substantial edits to the Create.cshtml file. I
 Lastly, I made some edits to the Index.cshtml for the Forms Controller deleting the things I no longer needed like the edit, details, and delete. These were very minor changes compared to the Create file.
 
 ## Results: Running!
+
+And there we have it! It is running! Overall, I found this homework to be a little bit easier than the last. I think this is because Dr. Morse had went though a great example in class, giving me awesome steps or a direction to follow. What also helped me understand what I was actually doing was through the problems we ran into in class. For example I saw how the web application would have functioned without the database, and now how we can use a database for our advantage. Furhtermore, I am glad with how this homework turned out. I am also excited (and scared) to see what we will create next. Enough of my thoughts...here are some screenshots of the web application in action.
+
+So here is my landing page for this homework that I created as I showed earlier. Again, the links work to both pages of this web application, which are to create a request and to see all the requests:
+![Landing](landing.PNG)
+
+When clicking on the See All Request Forms link it takes you to this page with all of the current requests in the database. As you can see there is a link to create a new request form or the navigation bar will work too:
+![All Users](allusers.PNG)
+
+When clicking on the Create A New Request link button, it takes you to this form I created. Yes, I know it's not as pleasing to the eye, but I tried to make it look as decent as I could and focused more on the funtionality:
+![Create Page](createindex.PNG)
+
+Here is an example of valid input for a request form:
+![Create Input](createinput.PNG)
+
+After clicking the Submit Request button it takes you back to the see all requests page, and from there you can see that your request was successful added and saved to the database. This is my best effort at circling the request we added:
+![Create Results](createresult.PNG)
+
+As always, if the input boxes are empty it will give the user this error:
+![Error](error.PNG)
+
