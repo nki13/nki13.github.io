@@ -12,7 +12,7 @@ CS460/HW4/HW4/bin/
 CS460/HW4/HW4/obj/
 CS460/HW4/packages/
 
-# HW4
+# HWK4
 
 CS460/HWK4/.vs/
 CS460/HWK4/HWK4/.vs/
@@ -29,6 +29,14 @@ CS460/HW5/HW5/obj/
 CS460/HW5/packages/
 CS460/HW5/HW5/App_Data/Forms.mdf
 CS460/HW5/HW5/App_Data/Forms_log.ldf
+
+# HW6
+CS460/HW6/.vs/
+CS460/HW6/HW6/.vs/
+CS460/HW6/HW6/bin/
+CS460/HW6/HW6/obj/
+CS460/HW6/packages/
+
 
 # Compiled Source #
 ###################
