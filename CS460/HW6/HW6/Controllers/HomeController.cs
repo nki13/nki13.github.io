@@ -11,10 +11,13 @@ using HW6.Models;
 
 namespace HW6.Controllers
 {
+    /// <summary>
+    /// This is the only controller for this homework
+    /// </summary>
     public class HomeController : Controller
     {
         /// <summary>
-        /// Base instance of database to use
+        /// Base instance of database to use within ActionMethods
         /// </summary>
         private WideWorldImporters db = new WideWorldImporters();
 

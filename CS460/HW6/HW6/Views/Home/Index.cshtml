@@ -5,9 +5,6 @@
 }
 
 @* This is my landing page*@
-<div class="jumbotron">
-    <h1>Wide World Importers</h1>
-</div>
 
 @*This is the form elements used to make page
   -Textbox
@@ -19,7 +16,7 @@
     <center>
     <h2>Client Search</h2>    
     <div class="row">
-        @Html.TextBox("Search", null, new { @class = "form-control", required = "required"})
+        @Html.TextBox("Search", null, new { @class = "form-control", required = "required", placeholder = "Search by client name"})
         <input type="submit" value="Search" class="btn btn-default" />
     </div>
     </center>
@@ -36,12 +33,12 @@
 {
     if (Model.Count() == 0)
     {
-        <h4>Im sorry, your search returned no results</h4>
+        <h3>Im sorry, your search returned no results</h3>
     }
     else
     {
         <div>
-            <h4>Names matching your search:</h4>
+            <h3>Names matching your search:</h3>
         </div>
         @* A for each loop that will go through every person with a match to the search, 
             and create a button for the user to interact with the search*@
@@ -49,7 +46,7 @@
         {
         <div>
             @*Here you can see how the id of each person is passed to the Specs parameter, and how user is taken to that page*@
-            <a class="btn btn-default btn-lg btn-block" href="Home/Specs/@person.PersonID" role="button">@person.FullName (@person.PreferredName)</a>
+            <a class="btn btn-default btn-lg btn-block" role="button" href="Home/Specs/@person.PersonID">@person.FullName (@person.PreferredName)</a>
         </div>
             }
         }
