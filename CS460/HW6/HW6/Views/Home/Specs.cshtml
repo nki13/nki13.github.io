@@ -66,4 +66,30 @@
             <dd> @String.Format("{0:C}", ViewBag.Profit) </dd>
         </dl>
     </div>
+
+    @* For Items Purchased (10 by highest profit) *@
+    <div class="col-md-6">
+        <h2>Items Purchased</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"> @Html.Label("stockid", "StockItemID") </th>
+                    <th scope="col"> @Html.Label("description", "Description") </th>
+                    <th scope="col"> @Html.Label("lineprofit", "Line Profit") </th>
+                    <th scope="col"> @Html.Label("salesperson", "Sales Person") </th>
+                </tr>
+            </thead>
+            @foreach (var items in Model.InvoiceLine)
+            {
+                <tbody>
+                    <tr>
+                        <td> @Html.DisplayFor(item => items.StockItemID) </td>
+                        <td> @Html.DisplayFor(item => items.Description) </td>
+                        <td> @String.Format("{0:C}", items.LineProfit) </td>
+                        <td> @Html.DisplayFor(item => items.Invoice.Person4.FullName) </td>
+                    </tr>
+                </tbody>
+            }
+        </table>
+    </div>
 }

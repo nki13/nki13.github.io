@@ -79,12 +79,23 @@ namespace HW6.Controllers
 
                 //For Purchase History Summary
                 //Sales
-                ViewBag.Sales = specs.Customer.Orders.SelectMany(invoice => invoice.Invoices).SelectMany(invoicelines => invoicelines.InvoiceLines).Sum(sales => sales.ExtendedPrice);
+                ViewBag.Sales = specs.Customer.Orders.SelectMany(invoice => invoice.Invoices)
+                                                    .SelectMany(invoicelines => invoicelines.InvoiceLines)
+                                                    .Sum(sales => sales.ExtendedPrice);
                 //Profit
-                ViewBag.Profit = specs.Customer.Orders.SelectMany(invoice => invoice.Invoices).SelectMany(invoicelines => invoicelines.InvoiceLines).Sum(profit => profit.LineProfit);
+                ViewBag.Profit = specs.Customer.Orders.SelectMany(invoice => invoice.Invoices)
+                                                    .SelectMany(invoicelines => invoicelines.InvoiceLines)
+                                                    .Sum(profit => profit.LineProfit);
+                
+                //For Items Purchased
+                specs.InvoiceLine = specs.Customer.Orders.SelectMany(invoice => invoice.Invoices)
+                                                        .SelectMany(invoicelines => invoicelines.InvoiceLines)
+                                                        .OrderByDescending(profit => profit.LineProfit)
+                                                        .Take(10)
+                                                        .ToList();
             }
 
-            //return the person
+            //return the specsmodel
             return View(specs);
         }
     }
