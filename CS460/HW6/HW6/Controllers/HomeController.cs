@@ -57,13 +57,13 @@ namespace HW6.Controllers
         {
             //Model that can hold base instance of a Person object to use for returning properties
             //Used because you can only return one thing, that this one thing can hold the many things we need to return
-            ViewModel view = new ViewModel();
+            SpecsModel specs = new SpecsModel();
 
             //Assigning the found given id to the Person object
-            view.Person = db.People.Find(id);
+            specs.Person = db.People.Find(id);
 
             //return the person
-            return View(view);
+            return View(specs);
         }
     }
 }
