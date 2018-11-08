@@ -26,3 +26,28 @@
         <dd> @Html.DisplayFor(model => model.Person.ValidFrom) </dd>
     </dl>
 </div>
+
+@* Html elements to show if person is a primary contact person for a customer*@
+
+@if (ViewBag.IsPrimary)
+{
+    <div class="col-md-10">
+        <h2>Company Profile</h2>
+        <dl class="dl-horizontal">
+            <dt> @Html.Label("company", "Company:") </dt>
+            <dd> @Html.DisplayFor(model => model.Customer.CustomerName) </dd>
+
+            <dt> @Html.Label("company-phone", "Phone:") </dt>
+            <dd> @Html.DisplayFor(model => model.Customer.PhoneNumber) </dd>
+
+            <dt> @Html.Label("company-fax", "Fax:") </dt>
+            <dd> @Html.DisplayFor(model => model.Customer.FaxNumber) </dd>
+
+            <dt> @Html.Label("company-site", "Website:") </dt>
+            <dd> @Html.DisplayFor(model => model.Customer.WebsiteURL) </dd>
+
+            <dt> @Html.Label("company-since", "Member Since:") </dt>
+            <dd> @Html.DisplayFor(model => model.Customer.ValidFrom) </dd>
+        </dl>
+    </div>
+}

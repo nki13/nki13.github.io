@@ -62,6 +62,20 @@ namespace HW6.Controllers
             //Assigning the found given id to the Person object
             specs.Person = db.People.Find(id);
 
+            //Check if person is a Primary Contact Person
+            if (specs.Person.Customers2.Count() <= 0)
+            {
+                //If false dont show anything else
+                ViewBag.IsPrimary = false;
+            }
+            else
+            {
+                //If true then show the following info
+                ViewBag.IsPrimary = true;
+                int customer_id = specs.Person.Customers2.FirstOrDefault().CustomerID;
+                specs.Customer = db.Customers.Find(customer_id);
+            }
+
             //return the person
             return View(specs);
         }
