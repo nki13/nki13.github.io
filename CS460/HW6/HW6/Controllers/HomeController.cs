@@ -62,7 +62,40 @@ namespace HW6.Controllers
             //Assigning the found given id to the Person object
             specs.Person = db.People.Find(id);
 
-            //return the person
+            //Check if person is a Primary Contact Person
+            if (specs.Person.Customers2.Count() <= 0)
+            {
+                //If false dont show anything else
+                ViewBag.IsPrimary = false;
+            }
+            else
+            {
+                //If true then show the following info
+                ViewBag.IsPrimary = true;
+
+                //For Company Profile
+                int customer_id = specs.Person.Customers2.FirstOrDefault().CustomerID;
+                specs.Customer = db.Customers.Find(customer_id);
+
+                //For Purchase History Summary
+                //Sales
+                ViewBag.Sales = specs.Customer.Orders.SelectMany(invoice => invoice.Invoices)
+                                                    .SelectMany(invoicelines => invoicelines.InvoiceLines)
+                                                    .Sum(sales => sales.ExtendedPrice);
+                //Profit
+                ViewBag.Profit = specs.Customer.Orders.SelectMany(invoice => invoice.Invoices)
+                                                    .SelectMany(invoicelines => invoicelines.InvoiceLines)
+                                                    .Sum(profit => profit.LineProfit);
+                
+                //For Items Purchased
+                specs.InvoiceLine = specs.Customer.Orders.SelectMany(invoice => invoice.Invoices)
+                                                        .SelectMany(invoicelines => invoicelines.InvoiceLines)
+                                                        .OrderByDescending(profit => profit.LineProfit)
+                                                        .Take(10)
+                                                        .ToList();
+            }
+
+            //return the specsmodel
             return View(specs);
         }
     }
