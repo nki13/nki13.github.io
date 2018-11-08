@@ -72,8 +72,16 @@ namespace HW6.Controllers
             {
                 //If true then show the following info
                 ViewBag.IsPrimary = true;
+
+                //For Company Profile
                 int customer_id = specs.Person.Customers2.FirstOrDefault().CustomerID;
                 specs.Customer = db.Customers.Find(customer_id);
+
+                //For Purchase History Summary
+                //Sales
+                ViewBag.Sales = specs.Customer.Orders.SelectMany(invoice => invoice.Invoices).SelectMany(invoicelines => invoicelines.InvoiceLines).Sum(sales => sales.ExtendedPrice);
+                //Profit
+                ViewBag.Profit = specs.Customer.Orders.SelectMany(invoice => invoice.Invoices).SelectMany(invoicelines => invoicelines.InvoiceLines).Sum(profit => profit.LineProfit);
             }
 
             //return the person

@@ -31,6 +31,7 @@
 
 @if (ViewBag.IsPrimary)
 {
+    @* For Company Profile Portion*@
     <div class="col-md-10">
         <h2>Company Profile</h2>
         <dl class="dl-horizontal">
@@ -48,6 +49,21 @@
 
             <dt> @Html.Label("company-since", "Member Since:") </dt>
             <dd> @Html.DisplayFor(model => model.Customer.ValidFrom) </dd>
+        </dl>
+    </div>
+
+    @* For Purchase History Summary *@
+    <div class="col-md-10">
+        <h2>Purchase History Summary</h2>
+        <dl class="dl-horizontal">
+            <dt> @Html.Label("orders", "Orders:") </dt>
+            <dd> @Html.DisplayFor(model => model.Customer.Orders.Count) </dd>
+
+            <dt> @Html.Label("sales", "Gross Sales:") </dt>
+            <dd> @String.Format("{0:C}", ViewBag.Sales) </dd>
+
+            <dt> @Html.Label("profit", "Gross Profit:") </dt>
+            <dd> @String.Format("{0:C}", ViewBag.Profit) </dd>
         </dl>
     </div>
 }
