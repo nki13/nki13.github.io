@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using HW6.Models;
+using HW6.Models.Specs;
 
 
 namespace HW6.Controllers

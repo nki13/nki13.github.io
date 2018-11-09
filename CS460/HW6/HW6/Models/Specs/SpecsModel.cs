@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace HW6.Models
+namespace HW6.Models.Specs
 {
     /// <summary>
     /// This is purely to help me return one thing to the view for Specs
