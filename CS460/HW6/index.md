@@ -152,3 +152,5 @@ While working with other classmates we got an example for this off of leaflet. H
 ## Results!
 
 Overall this homework was very challenging, but I continue to learn how valuable my classmates are. To complete this homework it took alot of drawing out and visualization where to navigate. I am happy with the way that my web app came out, and think this is probably the "prettiest" web app I have made thus far. I feel like I am really getting comfortable with the Model, View, Controller framework and am excited to see what other kinds of things we can do with databases. Ill, stop talking here. Here is a video of my web application for this homework running...
+
+[![Alt text](https://img.youtube.com/vi/4OX-1DG7mv0/0.jpg)](https://www.youtube.com/watch?v=4OX-1DG7mv0)
