@@ -24,3 +24,6 @@ Here is the link to my seperate repository where everything seen here is hosted:
 
 ### Homework 5 - MVC Application 2, simple database
 * [Homework 5 Journal](https://nki13.github.io/CS460/HW5)
+
+### Homework 6 - MVC Application 3, pre-existing relational database
+* [Homework 6 Journal](https://nki13.github.io/CS460/HW6)
