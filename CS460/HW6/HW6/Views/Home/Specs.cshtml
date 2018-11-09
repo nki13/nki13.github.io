@@ -5,6 +5,21 @@
     ViewBag.Title = "Specifications";
 }
 
+@*Copied from leaflet for map feature*@
+<head>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin="" />
+
+    <!-- Leaflet's JS for use with MapBox -->
+
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+            integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+            crossorigin=""></script>
+
+</head>
+
 @* Basic Html elements to show basic specs for the person*@
 <div class="row">
     <div class="col-md-6">
@@ -28,9 +43,10 @@
         </dl>
     </div>
     <div class="col-md-4">
-        <img src="https://via.placeholder.com/200.png?text=No+Photo" alt="@Model.Person.Photo" />
+        <img src="https://via.placeholder.com/200x250.png?text=No+Photo" alt="@Model.Person.Photo" />
     </div>
 </div>
+<br />
 
 @* Html elements to show if person is a primary contact person for a customer*@
 
@@ -55,6 +71,18 @@
             <dt> @Html.Label("company-since", "Member Since:") </dt>
             <dd> @Html.DisplayFor(model => model.Customer.ValidFrom) </dd>
         </dl>
+    </div>
+
+    @* Copied from leaflet for Map*@
+    <div class="col-md-4">
+    <div id="map" style="width:500px; height:300px;"> </div>
+        <script>
+            var long = @Model.Customer.DeliveryLocation.Longitude;
+            var lat = @Model.Customer.DeliveryLocation.Latitude;
+            var map = L.map('map').setView([lat, long], 15);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+            L.marker([lat, long]).addTo(map).bindPopup('<p>' + @Model.Customer.City.CityName + '</p>').openPopup();
+        </script>
     </div>
 
     @* For Purchase History Summary *@
