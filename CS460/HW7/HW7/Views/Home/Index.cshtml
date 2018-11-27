@@ -1,15 +1,31 @@
-﻿
-<div class="row">
-    <center>
-        <h1>Internet Language Translator</h1>
-        <br />
-        <form>
-            <div class="form-group">
-                <input type="text" id ="search" name="search" placeholder="Start typing your message here..." class="form-control">
+﻿@{ 
+    ViewBag.Title = "Index";
+}
+
+<body>
+    <div class="row">
+        <center>
+            <h1>Internet Language Translator</h1>
+            <br />
+            @using (Html.BeginForm("", "", FormMethod.Post, new { id = 0, @class = "myForm" }))
+            {
+             <div class="form-group">
+                @Html.TextBox("message", "", new { @class = "form-control", @placeholder = "Start typing your message here...", required = "required" })
                 <br />
-            </div>
-        </form>
-    </center>
-</div>
+             </div>
+             <p>
+                 <div id="res">
+         
+                 </div>
+             </p>
+            }
+        </center>
+    </div>
+</body>
+
+@section Scripts
+{
+    <script type="text/javascript" src=@Url.Content("/Scripts/translate.js")></script>
+}
 
 
