@@ -14,8 +14,7 @@
 function displayGif(data) {
     console.log("Reached display method");
     console.log(data);
-    var gif = data.data.images.fixed_height_still.url;
-    console.log(gif);
+    var gif = data.data.images.original.url;
     $('#res').append("<img src='" + gif + "'style='height:120px;width:120px;margin:25px;'></img>");
     console.log("reached after append");
 }
