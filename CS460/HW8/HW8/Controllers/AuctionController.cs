@@ -66,12 +66,15 @@ namespace HW8.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Item item = db.Items.Find(id);
-            if (item == null)
+            DetailsModel model = new DetailsModel()
+            {
+                ModelItem = db.Items.Find(id)
+            };
+            if (model.ModelItem == null)
             {
                 return HttpNotFound();
             }
-            return View(item);
+            return View(model);
         }
 
         // GET: Auction/Create

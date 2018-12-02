@@ -7,5 +7,8 @@ namespace HW8.Models
 {
     public class DetailsModel
     {
+        public Item ModelItem { get; set; }
+
+        public List<Bid> BidsList { get; set; }
     }
 }
