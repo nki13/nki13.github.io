@@ -14,30 +14,9 @@ namespace HW8.Controllers
     {
         private AuctionContext db = new AuctionContext();
 
-        // GET: Auction
-        public ActionResult Index()
-        {
-            var bids = db.Bids.Include(b => b.Buyer1).Include(b => b.Item);
-            return View(bids.ToList());
-        }
-
-        // GET: Auction/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Bid bid = db.Bids.Find(id);
-            if (bid == null)
-            {
-                return HttpNotFound();
-            }
-            return View(bid);
-        }
 
         // GET: Auction/Create
-        public ActionResult Create()
+        public ActionResult CreateBid()
         {
             ViewBag.Buyer = new SelectList(db.Buyers, "Name", "Name");
             ViewBag.ItemID = new SelectList(db.Items, "ID", "Name");
@@ -49,7 +28,7 @@ namespace HW8.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,ItemID,Buyer,Price,Timestamp")] Bid bid)
+        public ActionResult CreateBid([Bind(Include = "ItemID,Buyer,Price,Timestamp")] Bid bid)
         {
             if (ModelState.IsValid)
             {
@@ -59,8 +38,55 @@ namespace HW8.Controllers
             }
 
             ViewBag.Buyer = new SelectList(db.Buyers, "Name", "Name", bid.Buyer);
-            ViewBag.ItemID = new SelectList(db.Items, "ID", "Name", bid.ItemID);
+            ViewBag.Item = new SelectList(db.Items, "ID", "Name", bid.ItemID);
             return View(bid);
+        }
+
+        // GET: Auction
+        public ActionResult Index()
+        {
+            var items = db.Items.Include(i => i.Seller1);
+            return View(items.ToList());
+        }
+
+        // GET: Auction/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Item item = db.Items.Find(id);
+            if (item == null)
+            {
+                return HttpNotFound();
+            }
+            return View(item);
+        }
+
+        // GET: Auction/Create
+        public ActionResult Create()
+        {
+            ViewBag.Seller = new SelectList(db.Sellers, "Name", "Name");
+            return View();
+        }
+
+        // POST: Auction/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "ID,Name,Description,Seller")] Item item)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Items.Add(item);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.Seller = new SelectList(db.Sellers, "Name", "Name", item.Seller);
+            return View(item);
         }
 
         // GET: Auction/Edit/5
@@ -70,14 +96,13 @@ namespace HW8.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bid bid = db.Bids.Find(id);
-            if (bid == null)
+            Item item = db.Items.Find(id);
+            if (item == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Buyer = new SelectList(db.Buyers, "Name", "Name", bid.Buyer);
-            ViewBag.ItemID = new SelectList(db.Items, "ID", "Name", bid.ItemID);
-            return View(bid);
+            ViewBag.Seller = new SelectList(db.Sellers, "Name", "Name", item.Seller);
+            return View(item);
         }
 
         // POST: Auction/Edit/5
@@ -85,17 +110,16 @@ namespace HW8.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,ItemID,Buyer,Price,Timestamp")] Bid bid)
+        public ActionResult Edit([Bind(Include = "ID,Name,Description,Seller")] Item item)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(bid).State = EntityState.Modified;
+                db.Entry(item).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Buyer = new SelectList(db.Buyers, "Name", "Name", bid.Buyer);
-            ViewBag.ItemID = new SelectList(db.Items, "ID", "Name", bid.ItemID);
-            return View(bid);
+            ViewBag.Seller = new SelectList(db.Sellers, "Name", "Name", item.Seller);
+            return View(item);
         }
 
         // GET: Auction/Delete/5
@@ -105,12 +129,12 @@ namespace HW8.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bid bid = db.Bids.Find(id);
-            if (bid == null)
+            Item item = db.Items.Find(id);
+            if (item == null)
             {
                 return HttpNotFound();
             }
-            return View(bid);
+            return View(item);
         }
 
         // POST: Auction/Delete/5
@@ -118,8 +142,8 @@ namespace HW8.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Bid bid = db.Bids.Find(id);
-            db.Bids.Remove(bid);
+            Item item = db.Items.Find(id);
+            db.Items.Remove(item);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

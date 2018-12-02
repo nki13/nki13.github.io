@@ -1,4 +1,4 @@
-﻿@model IEnumerable<HW8.Models.Bid>
+﻿@model IEnumerable<HW8.Models.Item>
 
 @{
     ViewBag.Title = "Index";
@@ -11,12 +11,11 @@
 <div class="row">
     <div class="col-md-4">
         <h2>Bid on an Item!</h2>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="/Auction/CreateBid">Go! &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>View Auction Items</h2>
+        <p><a class="btn btn-default" href="/Auction/Index">Go! &raquo;</a></p>
     </div>
 </div>
 
@@ -26,16 +25,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Buyer1.Name)
+            @Html.DisplayNameFor(model => model.Seller1.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Item.Name)
+            @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Timestamp)
+            @Html.DisplayNameFor(model => model.Description)
         </th>
         <th></th>
     </tr>
@@ -44,16 +40,13 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Buyer1.Name)
+                @Html.DisplayFor(modelItem => item.Seller1.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Item.Name)
+                @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Timestamp)
+                @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |

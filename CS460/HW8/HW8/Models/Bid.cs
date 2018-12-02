@@ -17,9 +17,15 @@ namespace HW8.Models
         [StringLength(50)]
         public string Buyer { get; set; }
 
+        [Required]
         public int Price { get; set; }
 
-        public DateTime Timestamp { get; set; }
+        private DateTime now = DateTime.Now;
+
+        public DateTime Timestamp {
+                                    get { return now; }
+                                    set { now = value;  }
+                                  }
 
         public virtual Buyer Buyer1 { get; set; }
 
