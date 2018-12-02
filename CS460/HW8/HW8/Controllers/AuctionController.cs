@@ -51,8 +51,12 @@ namespace HW8.Controllers
         // GET: Auction
         public ActionResult IndexList()
         {
-            var items = db.Items.Include(i => i.Seller1);
-            return View(items.ToList());
+            ListViewModel model = new ListViewModel()
+            {
+                ItemsList = db.Items.Include(i => i.Seller1).ToList(),
+                BidsList = db.Bids.Take(10).OrderByDescending(b => b.Timestamp).ToList()
+            };
+            return View(model);
         }
 
         // GET: Auction/Details/5

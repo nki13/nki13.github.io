@@ -1,4 +1,4 @@
-﻿@model IEnumerable<HW8.Models.Item>
+﻿@model HW8.Models.ListViewModel
 
 @{
     ViewBag.Title = "IndexList";
@@ -17,18 +17,18 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Seller1.Name)
+            @Html.DisplayName("Seller Name")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayName("Item Name")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayName("Item Description")
         </th>
         <th></th>
     </tr>
 
-    @foreach (var item in Model)
+    @foreach (var item in Model.ItemsList)
     {
         <tr>
             <td>
@@ -48,8 +48,50 @@
         </tr>
     }
 
-</table>
+</table> 
 
 <h2>10 Most Recent Bids:</h2>
 
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Item ID")
+        </th>
+        <th>
+            @Html.DisplayName("Item Name")
+        </th>
+        <th>
+            @Html.DisplayName("Buyer's Name")
+        </th>
+        <th>
+            @Html.DisplayName("Bid Amount")
+        </th>
+        <th>
+            @Html.DisplayName("Bid Timestamp")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var bid in Model.BidsList)
+    {
+     <tr>
+        <td>
+            @Html.DisplayFor(modelBid => bid.ItemID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelBid => bid.Item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelBid => bid.Buyer1.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelBid => bid.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelBid => bid.Timestamp)
+        </td>
+     </tr>
+    }
+
+</table>
 
