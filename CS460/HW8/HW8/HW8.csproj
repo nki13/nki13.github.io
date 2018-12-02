@@ -212,6 +212,7 @@
     <Content Include="Views\Auction\Edit.cshtml" />
     <Content Include="Views\Auction\Index.cshtml" />
     <Content Include="Views\Auction\CreateBid.cshtml" />
+    <Content Include="Views\Auction\IndexList.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -5,55 +5,15 @@
 }
 
 <div class="jumbotron">
-    <h1>REGINALD'S ANCIENT ANTIQUITIES AUCTION HOUSE</h1>
+    <center><h1>REGINALD'S ANCIENT ANTIQUITIES AUCTION HOUSE</h1>
+    <div class="row">
+        <div class="col-lg-5">
+            <h2>Bid on an Item!</h2>
+            <a class="btn btn-default" href="/Auction/CreateBid">Go! &raquo;</a>
+        </div>
+        <div class="col-lg-5">
+            <h2>View all Auction Items</h2>
+            <a class="btn btn-default" href="/Auction/IndexList">Go! &raquo;</a>
+        </div>
+    </div> </center>
 </div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Bid on an Item!</h2>
-        <p><a class="btn btn-default" href="/Auction/CreateBid">Go! &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>View Auction Items</h2>
-        <p><a class="btn btn-default" href="/Auction/Index">Go! &raquo;</a></p>
-    </div>
-</div>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Seller1.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Seller1.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-            </td>
-        </tr>
-    }
-
-</table>

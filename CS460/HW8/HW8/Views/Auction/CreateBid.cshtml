@@ -4,7 +4,13 @@
     ViewBag.Title = "CreateBid";
 }
 
-<h2>CreateBid</h2>
+<div class="jumbotron">
+    <center>
+        <h1>REGINALD'S ANCIENT ANTIQUITIES AUCTION HOUSE</h1>
+    </center>
+</div>
+
+<h2>Bid On An Item!</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,7 +18,6 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Bid</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
          <div class="form-group">
@@ -56,7 +61,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Item List", "IndexList")
 </div>
 
 @section Scripts {

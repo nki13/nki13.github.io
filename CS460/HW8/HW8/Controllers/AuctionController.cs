@@ -34,7 +34,7 @@ namespace HW8.Controllers
             {
                 db.Bids.Add(bid);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexList");
             }
 
             ViewBag.Buyer = new SelectList(db.Buyers, "Name", "Name", bid.Buyer);
@@ -44,6 +44,12 @@ namespace HW8.Controllers
 
         // GET: Auction
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        // GET: Auction
+        public ActionResult IndexList()
         {
             var items = db.Items.Include(i => i.Seller1);
             return View(items.ToList());
@@ -82,7 +88,7 @@ namespace HW8.Controllers
             {
                 db.Items.Add(item);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexList");
             }
 
             ViewBag.Seller = new SelectList(db.Sellers, "Name", "Name", item.Seller);
@@ -116,7 +122,7 @@ namespace HW8.Controllers
             {
                 db.Entry(item).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexList");
             }
             ViewBag.Seller = new SelectList(db.Sellers, "Name", "Name", item.Seller);
             return View(item);
@@ -143,9 +149,17 @@ namespace HW8.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Item item = db.Items.Find(id);
+            List<Bid> allBids = db.Bids.Where(b => b.ItemID == id).ToList();
+            if (allBids.Count == 0)
+            {
+                foreach (Bid bid in allBids)
+                {
+                    db.Bids.Remove(bid);
+                }
+            }
             db.Items.Remove(item);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("IndexList");
         }
 
         protected override void Dispose(bool disposing)

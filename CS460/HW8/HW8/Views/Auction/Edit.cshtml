@@ -4,7 +4,13 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<div class="jumbotron">
+    <center>
+        <h1>REGINALD'S ANCIENT ANTIQUITIES AUCTION HOUSE</h1>
+    </center>
+</div>
+
+<h2>Edit An Auction Item:</h2>
 
 
 @using (Html.BeginForm())
@@ -12,7 +18,6 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Item</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID)
@@ -50,7 +55,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Item List", "IndexList")
 </div>
 
 @section Scripts {
