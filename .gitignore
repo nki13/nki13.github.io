@@ -44,6 +44,16 @@ CS460/HW7/HW7/bin/
 CS460/HW7/HW7/obj/
 CS460/HW7/packages/
 
+# HW8
+
+CS460/HW8/.vs/
+CS460/HW8/HW8/.vs/
+CS460/HW8/HW8/bin/
+CS460/HW8/HW8/obj/
+CS460/HW8/packages/
+CS460/HW8/HW8/App_Data/ReginaldsAuction.mdf
+CS460/HW8/HW8/App_Data/ReginaldsAuction_log.ldf
+
 
 # Compiled Source #
 ####################

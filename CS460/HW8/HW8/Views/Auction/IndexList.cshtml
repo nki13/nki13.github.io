@@ -1,0 +1,97 @@
+﻿@model HW8.Models.ListViewModel
+
+@{
+    ViewBag.Title = "IndexList";
+}
+
+<div class="jumbotron">
+    <center>
+        <h1>REGINALD'S ANCIENT ANTIQUITIES AUCTION HOUSE</h1>
+    </center>
+</div>
+
+<h2>All Of The Auction Items:</h2>
+<div>
+    @Html.ActionLink("Create An Auction Item", "Create")
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Seller Name")
+        </th>
+        <th>
+            @Html.DisplayName("Item Name")
+        </th>
+        <th>
+            @Html.DisplayName("Item Description")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.ItemsList)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seller1.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table> 
+
+<h2>Most Recent Bids:</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Item ID")
+        </th>
+        <th>
+            @Html.DisplayName("Item Name")
+        </th>
+        <th>
+            @Html.DisplayName("Buyer's Name")
+        </th>
+        <th>
+            @Html.DisplayName("Bid Amount")
+        </th>
+        <th>
+            @Html.DisplayName("Bid Timestamp")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var bid in Model.BidsList)
+    {
+     <tr>
+        <td>
+            @Html.DisplayFor(modelBid => bid.ItemID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelBid => bid.Item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelBid => bid.Buyer1.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelBid => bid.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelBid => bid.Timestamp)
+        </td>
+     </tr>
+    }
+
+</table>
+
