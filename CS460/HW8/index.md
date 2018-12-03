@@ -11,8 +11,9 @@ For this homework I had to make an MVC Web Application that used a multi-table, 
 
 
 ## E-R Diagram...
+![ER-Diagram](hw8-er-diagram.PNG)
 
 ## Results...
-This lab was challenging in some ways, but also empowering. I found out my strong skills from this class, and also things that I need to work on more. Again, with this homework I struggled with AJAX, but was still able to show what I have learned throughout this term. I am very happy with the leaps and bounds that I've made in this term, but am excited to see what else this sequence has to offer!
+This lab was challenging in some ways, but also empowering. I found out my strong skills from this class, and also things that I need to work on more. Again, with this homework I struggled with AJAX, but was still able to show what I have learned throughout this term. I am very happy with the leaps and bounds that I've made in this term, but am excited to see what else this sequence has to offer! Here is my demo video for this homework...
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PAZol0dLj70" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
