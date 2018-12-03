@@ -35,6 +35,7 @@ Here is the link to my seperate repository where everything seen here is hosted:
 
 ### Homework 8 - MVC Application 5, DIY multi-table/relational DB
 * [Homework 8 Journal](https://nki13.github.io/CS460/HW8)
+* [Homework 8 Demo Video](https://www.youtube.com/watch?v=PAZol0dLj70)
 
 ### Homework 9 - MVC Application 6, Cloud Deployment
 * [Homework 9 Journal](https://nki13.github.io/CS460/HW9)
