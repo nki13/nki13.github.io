@@ -7,6 +7,7 @@ For this homework we had to make an 'Internet Language Translator' MVC app that 
 * [Portfolio Home Page](https://nki13.github.io)
 * [Assignment Page](http://www.wou.edu/~morses/classes/cs46x/assignments/HW7_1819.html)
 * [Code Repository](https://github.com/nki13/nki13.github.io/tree/master/CS460/HW7)
+* [Homework 7 Demo Video](https://www.youtube.com/watch?v=J62z3aDg0pk)
 
 ## Step 1: Giphy API Key
 

@@ -27,3 +27,14 @@ Here is the link to my seperate repository where everything seen here is hosted:
 
 ### Homework 6 - MVC Application 3, pre-existing relational database
 * [Homework 6 Journal](https://nki13.github.io/CS460/HW6)
+* [Homework 6 Demo Video](https://www.youtube.com/watch?v=4OX-1DG7mv0)
+
+### Homework 7 - MVC Application 4, AJAX single page app
+* [Homework 7 Journal](https://nki13.github.io/CS460/HW7)
+* [Homework 7 Demo Video](https://www.youtube.com/watch?v=J62z3aDg0pk)
+
+### Homework 8 - MVC Application 5, DIY multi-table/relational DB
+* [Homework 8 Journal](https://nki13.github.io/CS460/HW8)
+
+### Homework 9 - MVC Application 6, Cloud Deployment
+* [Homework 9 Journal](https://nki13.github.io/CS460/HW9)

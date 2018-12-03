@@ -7,6 +7,8 @@ For this homework I had to use a Code First with an Existing Database workflow w
 * [Portfolio Home Page](https://nki13.github.io)
 * [Assignment Page](http://www.wou.edu/~morses/classes/cs46x/assignments/HW6_1819.html)
 * [Code Repository](https://github.com/nki13/nki13.github.io/tree/master/CS460/HW6)
+* [Homework 6 Demo Video](https://www.youtube.com/watch?v=4OX-1DG7mv0)
+
 
 ## Step 1: Loading in the database
 
