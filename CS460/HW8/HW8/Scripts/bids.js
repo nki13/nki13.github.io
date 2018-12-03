@@ -22,8 +22,8 @@ function displayBids(BidsList) {
     else {
         console.log("items has bids");
         for (var i = 0; i < BidList.length; i++) {
-            // This "." is for class names of tables not ID's'
-            $(".table").append("<tr class=\"bid\"><td>" + BidsList[i].Buyer + "</td><td>$" + Number(BidTable[i].Price).toLocaleString('en-US', { minimumFractionDigits: 2 }) + "</td></tr>");
+            // . shows class names
+            $(".tbody").append("<tr class=\"bid\"><td>" + BidsList[i].Buyer + "</td><td>$" + Number(BidTable[i].Price).toLocaleString('en-US', { minimumFractionDigits: 2 }) + "</td></tr>");
         }
         console.log("end if");
     }
@@ -42,38 +42,3 @@ function main() {
 }
 
 $(document).ready(main());
-/* $(document).ready(function () {
-
-    //copied from Dr. Morse's Homework
-    var ajax_call = function () {
-        var a = document.getElementById('modelID').value;
-        console.log(a);
-        var source = "/Auction/Bids/" + a;
-        console.log(source);
-        console.log("in ajax");
-        $.ajax({
-            type: "GET",
-            dataType: "json",
-            url: source,
-            success: displayBids,
-            error: errorOnAjax
-        });
-        console.log("after ajax");
-    }
-
-    var interval = 1000 * 5; // 5 seconds delay
-    window.setInterval(ajax_call, interval);
-    console.log("after ajax call");
-
-    function displayBids(data) {
-        console.log("Made it to display 1");
-        $(".table").remove();
-        console.log("Made it to display");
-        //$(".table").append("<thead class='thead'><tr><th scope='col'>Bidder Name: </th><th scope='col'>Bid Amount: </th></tr></thead> ");
-        for (var i = 0; i < data.length; i++) {
-            $(".table").append("<tr><td scope='row'>" + data[i].Name + "</td><td>" + "$" + Number(data[i].Amount).toLocaleString('en') + "</td>");
-        }
-    }
-
-
-}); */

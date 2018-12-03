@@ -46,7 +46,11 @@ namespace HW8.Controllers
         // GET: Auction
         public ActionResult Index()
         {
-            return View();
+            ListViewModel model = new ListViewModel()
+            {
+                BidsList = db.Bids.Take(10).OrderByDescending(b => b.Timestamp).ToList()
+            };
+            return View(model);
         }
 
         // GET: Auction
@@ -54,8 +58,7 @@ namespace HW8.Controllers
         {
             ListViewModel model = new ListViewModel()
             {
-                ItemsList = db.Items.Include(i => i.Seller1).ToList(),
-                BidsList = db.Bids.Take(10).OrderByDescending(b => b.Timestamp).ToList()
+                ItemsList = db.Items.Include(i => i.Seller1).ToList()
             };
             return View(model);
         }
@@ -181,8 +184,27 @@ namespace HW8.Controllers
 
         public JsonResult Bids(int? id)
         {
-            var BidsList = db.Items.SelectMany(a => a.Bids).Where(b => b.ItemID == id).OrderByDescending(c => c.Price).ToList();
-            return Json(BidsList, JsonRequestBehavior.AllowGet);
+            DetailsModel model = new DetailsModel()
+            {
+                ModelItem = db.Items.Find(id)
+            };
+
+            var result = "";
+
+            if (model.BidsList.Count > 0)
+            {
+                // get the ID of auction item with bid(s)
+                int ItemId = model.ModelItem.ID;
+
+                // use the ID to grab those bids of the auction item
+                model.BidsList = db.Items.SelectMany(a => a.Bids).Where(b => b.ItemID == ItemId).OrderByDescending(c => c.Price).ToList();
+
+                // convert to json for return
+                result = JsonConvert.SerializeObject(model.BidsList);
+            }
+            return Json(result, JsonRequestBehavior.AllowGet);
+            //var BidsList = db.Items.SelectMany(a => a.Bids).Where(b => b.ItemID == id).OrderByDescending(c => c.Price).ToList();
+            //return Json(BidsList, JsonRequestBehavior.AllowGet);
         }
     }
 }
