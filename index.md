@@ -39,3 +39,4 @@ Here is the link to my seperate repository where everything seen here is hosted:
 
 ### Homework 9 - MVC Application 6, Cloud Deployment
 * [Homework 9 Journal](https://nki13.github.io/CS460/HW9)
+*[Homework 9 Azure Link](http://nki13-homework8.azurewebsites.net/Auction)
