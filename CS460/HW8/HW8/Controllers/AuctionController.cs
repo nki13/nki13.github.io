@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using Newtonsoft.Json;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
@@ -176,6 +177,12 @@ namespace HW8.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public JsonResult Bids(int? id)
+        {
+            var BidsList = db.Items.SelectMany(a => a.Bids).Where(b => b.ItemID == id).OrderByDescending(c => c.Price).ToList();
+            return Json(BidsList, JsonRequestBehavior.AllowGet);
         }
     }
 }
